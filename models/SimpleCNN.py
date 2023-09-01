@@ -1,5 +1,5 @@
 import torch
-#from models.custom import conv2d
+from models.custom import conv2d
 
 class Native_CNN(torch.nn.Module):
 
