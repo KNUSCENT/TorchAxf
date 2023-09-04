@@ -1,4 +1,9 @@
 # TorchAxf
 Approximate DNN Framework
 
-push test
+# pre-setup
+ubuntu 20.04 at least
+CUDA
+PyTorch
+CuPy
+pynvrtc
