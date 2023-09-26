@@ -31,3 +31,7 @@ $ source ~/.bashrc
 $ nvcc --version
 ```
 If you successfully install CUDA, you can see nvcc version.
+
+Install Pytorch: https://pytorch.org/get-started/locally/
+
+Install pyncrtc tqdm cupy
