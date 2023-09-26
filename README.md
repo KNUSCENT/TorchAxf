@@ -15,5 +15,5 @@ Ubuntu 20.04 with the following commands run:
 ```
 $ apt-get update
 $ apt-get upgrade -y
-$ apt-get install gcc g++ python3 python3-pip wget libxml2-dev vim git -y
+$ apt-get install gcc g++ python3 python3-pip wget vim git -y
 ```
