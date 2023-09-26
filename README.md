@@ -31,7 +31,7 @@ Install Pytorch: https://pytorch.org/get-started/locally/
 
 Install pyncrtc cupy
 ```
-$ pip3 install pynvrtc tqdm
+$ pip3 install pynvrtc
 ```
 https://docs.cupy.dev/en/stable/install.html
 
