@@ -18,5 +18,4 @@ $ apt-get upgrade -y
 $ apt-get install gcc g++ python3 python3-pip wget vim git -y
 ```
 
-CUDA install
-https://developer.nvidia.com/cuda-toolkit-archive
+Install the appropriate CUDA version for PyTorch at the following https://developer.nvidia.com/cuda-toolkit-archive
