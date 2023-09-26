@@ -7,4 +7,4 @@ CUDA \
 PyTorch \
 CuPy \
 pynvrtc \
-This manual was written based on Ubuntu 20.04 with docker (Note that if you used an old Nvidia driver, you need to upgrade the driver to the newest one.). 
+This manual was written based on Ubuntu 20.04 with docker. (Note that if you used old Nvidia driver, you must upgrade the driver to the newest one.)
