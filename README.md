@@ -30,3 +30,4 @@ Source and Test:
 $ source ~/.bashrc
 $ nvcc --version
 ```
+If you successfully install CUDA, you can see nvcc version.
