@@ -40,5 +40,6 @@ https://docs.cupy.dev/en/stable/install.html
 # pre-trained weight
 ```
 wget https://rutgers.box.com/shared/static/gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
-unzip [download file name]
+unzip gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
+rm gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
 ```
