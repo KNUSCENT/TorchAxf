@@ -12,7 +12,7 @@ Ubuntu 20.04 with the following commands run:
 ```
 $ apt-get update
 $ apt-get upgrade -y
-$ apt-get install gcc g++ python3 python3-pip libxml2-dev wget vim git -y
+$ apt-get install gcc g++ python3 python3-pip libxml2-dev wget vim git unzip -y
 ```
 
 Install the appropriate CUDA version for PyTorch at the following https://developer.nvidia.com/cuda-toolkit-archive 
@@ -38,3 +38,7 @@ $ pip3 install pynvrtc
 https://docs.cupy.dev/en/stable/install.html
 
 # pre-trained weight
+```
+wget https://rutgers.box.com/shared/static/gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
+unzip [download file name]
+```
