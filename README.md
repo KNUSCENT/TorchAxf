@@ -15,7 +15,7 @@ Ubuntu 20.04 with the following commands run:
 ```
 $ apt-get update
 $ apt-get upgrade -y
-$ apt-get install gcc g++ python3 python3-pip wget vim git -y
+$ apt-get install gcc g++ python3 python3-pip ibxml2-dev wget vim git -y
 ```
 
 Install the appropriate CUDA version for PyTorch at the following https://developer.nvidia.com/cuda-toolkit-archive 
