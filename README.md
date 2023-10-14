@@ -2,9 +2,6 @@
 We proposed "TorchAxf: Enabling Rapid Simulation of Approximate DNN Models using GPU-based Floating-Point Computing Framework" in MASCOTS 2023.
 ![image](https://github.com/rhkr9609/TorchAxf/assets/45326283/71269312-d161-4ce2-9dd1-0a397820142d)
 
-
-we reference adapt(https://github.com/dimdano/adapt)
-
 # pre-setup
 This manual was written based on Ubuntu 20.04 with docker. And you need an NVIDIA GPU (over 8GB GPU memory). \
 Before configuring your environment, check if your GPU driver is the latest version suitable for PyTorch, and update it if necessary. 
