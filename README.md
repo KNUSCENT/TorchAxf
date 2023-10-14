@@ -1,5 +1,6 @@
 # TorchAxf
-Approximate DNN Framework
+We proposed "TorchAxf: Enabling Rapid Simulation of Approximate DNN Models using GPU-based Floating-Point Computing Framework" in MASCOTS 2023.
+![image](https://github.com/rhkr9609/TorchAxf/assets/45326283/e3a5c2ba-b817-44db-bc0e-1e94b51eb61e)
 
 we reference adapt(https://github.com/dimdano/adapt)
 
