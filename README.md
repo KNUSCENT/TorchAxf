@@ -1,7 +1,7 @@
 # TorchAxf
 Approximate DNN Framework
 
-we reference adapt(https://github.com/dimdano/adapt), huyvnphan (https://github.com/huyvnphan/PyTorch_CIFAR10/tree/master)
+we reference adapt(https://github.com/dimdano/adapt)
 
 # pre-setup
 This manual was written based on Ubuntu 20.04 with docker. And you need an NVIDIA GPU (over 8GB GPU memory). \
@@ -38,6 +38,7 @@ $ pip3 install pynvrtc
 https://docs.cupy.dev/en/stable/install.html
 
 # pre-trained weight
+TorchAxf used pre-trained weight by huyvnphan (https://github.com/huyvnphan/PyTorch_CIFAR10/tree/master)
 ```
 wget https://rutgers.box.com/shared/static/gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
 unzip gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
