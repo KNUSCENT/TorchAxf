@@ -30,7 +30,7 @@ If you successfully install CUDA, you can see nvcc version.
 
 Install Pytorch: https://pytorch.org/get-started/locally/
 
-Install pyncrtc cupy
+Install pyncrtc and cupy
 ```
 $ pip3 install pynvrtc
 ```
