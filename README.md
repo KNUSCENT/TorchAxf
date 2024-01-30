@@ -46,7 +46,7 @@ unzip gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
 rm gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
 cd ..
 ```
-state_ditcts move in models folder
+
 # Run guideline
 
 

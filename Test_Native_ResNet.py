@@ -43,7 +43,7 @@ train_dataset = torch.utils.data.Subset(train_dataset, evens)
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=8, pin_memory=True)
 test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=8, pin_memory=True)
 ###################################################################################################################################
-model = resnet.resnet18(pretrained=True, device=device)
+model = resnet.resnet50(pretrained=True, device=device)
 model = model.to(device)
 
 correct = 0
