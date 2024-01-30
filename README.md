@@ -24,7 +24,7 @@ $ docker pull pytorch/pytorch:2.1.2-cuda11.8-cudnn8-devel
 $ docker run -it --gpus all --name TorchAxf -w /home -dt pytorch/pytorch:2.1.2-cuda11.8-cudnn8-devel /bin/bash
 $ docker exec -it TorchAxf /bin/bash
 ```
-
+<!--
 Ubuntu 20.04 pre-setup commands:
 ```
 $ apt-get update
@@ -45,6 +45,8 @@ Source and Test:
 $ source ~/.bashrc
 $ nvcc --version
 ```
+-->
+
 If you successfully install CUDA, you can see nvcc version.
 
 Install Pytorch: https://pytorch.org/get-started/locally/
