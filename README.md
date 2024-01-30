@@ -6,6 +6,14 @@ TorchAxf: a **floating-point** computing framework developed to accelerate the e
 
 TorchAxf is capable of computing PyTorch's conv1d and conv2d functions using approximate floating-point arithmetic.
 
+Provide CNN models:
+Pytorch: ResNet, VGGNet, DenseNet, GoogleNet, Inception-v3, MobileNetv2
+
+Models are not provided, however, they can be easily applied and thoroughly tested within the TorchAxf framework.:
+SpykeTorch(SDNN, DCSNN, R-STDP): https://github.com/miladmozafari/SpykeTorch
+SENet: https://github.com/moskomule/senet.pytorch
+AdderNet: https://github.com/huawei-noah/AdderNet
+
 # pre-setup
 This manual was written based on Ubuntu 20.04 with docker. And you need an NVIDIA GPU (over 8GB GPU memory). \
 Before configuring your environment, check if your GPU driver is the latest version suitable for PyTorch, and update it if necessary. 
