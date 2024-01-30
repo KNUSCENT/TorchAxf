@@ -22,6 +22,7 @@ Docker image download and run
 ```
 $ docker pull ubuntu:20.04
 $ docker run -it --gpus all --name TorchAxf -w /home -dt ubuntu:20.04 /bin/bash
+$ docker exec -it TorchAxf /bin/bash
 ```
 
 Ubuntu 20.04 with the following commands run:
