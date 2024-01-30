@@ -40,9 +40,11 @@ $ cd TorchAxf
 pre-trained weight
 TorchAxf used pre-trained weight by Huy Phan (https://github.com/huyvnphan/PyTorch_CIFAR10/tree/master)
 ```
+cd models
 wget https://rutgers.box.com/shared/static/gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
 unzip gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
 rm gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
+cd ..
 ```
 state_ditcts move in models folder
 # Run guideline
