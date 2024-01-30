@@ -33,7 +33,7 @@ $ apt-get install gcc g++ python3 python3-pip libxml2-dev wget vim git unzip -y
 ```
 
 Install the appropriate CUDA 11.8 version for PyTorch at the following: <br/>
-CUDA download link: [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local)
+CUDA 11.8 download link: [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local)
 
 Set path in ~/.bashrc:
 ```
