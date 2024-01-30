@@ -29,14 +29,14 @@ require package install in docker container
 $ apt-get update
 $ apt-get install wget vim git unzip -y
 ```
-Setup Framework
+#Setup Framework
 ```
 $ git clone https://github.com/rhkr9609/TorchAxf.git
 $ cd TorchAxf
 ```
 
 
-# pre-trained weight
+pre-trained weight
 TorchAxf used pre-trained weight by Huy Phan (https://github.com/huyvnphan/PyTorch_CIFAR10/tree/master)
 ```
 wget https://rutgers.box.com/shared/static/gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
