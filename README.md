@@ -45,7 +45,7 @@ Source and Test:
 $ source ~/.bashrc
 $ nvcc --version
 ```
--->
+
 
 If you successfully install CUDA, you can see nvcc version.
 
@@ -56,6 +56,7 @@ Install pyncrtc and cupy
 $ pip3 install pynvrtc
 ```
 https://docs.cupy.dev/en/stable/install.html
+-->
 
 # pre-trained weight
 TorchAxf used pre-trained weight by Huy Phan (https://github.com/huyvnphan/PyTorch_CIFAR10/tree/master)
