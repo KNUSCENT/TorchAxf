@@ -7,11 +7,15 @@ TorchAxf: a **floating-point** computing framework developed to accelerate the e
 TorchAxf is capable of computing PyTorch's conv1d and conv2d functions using approximate floating-point arithmetic.
 
 Provide CNN models:
+
 Pytorch: ResNet, VGGNet, DenseNet, GoogleNet, Inception-v3, MobileNetv2
 
 Models are not provided, however, they can be easily applied and thoroughly tested within the TorchAxf framework.:
+
 SpykeTorch(SDNN, DCSNN, R-STDP): https://github.com/miladmozafari/SpykeTorch
+
 SENet: https://github.com/moskomule/senet.pytorch
+
 AdderNet: https://github.com/huawei-noah/AdderNet
 
 # pre-setup
