@@ -15,7 +15,7 @@ SENet: https://github.com/moskomule/senet.pytorch <br/>
 AdderNet: https://github.com/huawei-noah/AdderNet
 
 # pre-setup
-This manual was written based on Ubuntu 20.04 with Pytorch and CUDA 11.8. And you need an NVIDIA GPU (over 8GB GPU memory). <br/>
+This manual was written based on Ubuntu 20.04 with Docker, Pytorch and CUDA 11.8. And you need an NVIDIA GPU (over 8GB GPU memory). <br/>
 Before configuring your environment, check if your GPU driver is the latest version suitable for PyTorch, and update it if necessary. 
 
 
