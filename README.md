@@ -18,6 +18,11 @@ AdderNet: https://github.com/huawei-noah/AdderNet
 This manual was written based on Ubuntu 20.04 with Docker, Pytorch and CUDA 11.8. And you need an NVIDIA GPU (over 8GB GPU memory). <br/>
 Before configuring your environment, check if your GPU driver is the latest version suitable for PyTorch, and update it if necessary. 
 
+Docker image download and run
+```
+$ docker pull utuntu:20.04
+$ docker run -it --gpus all --name TorchAxf -w /home -dt ubuntu20.04 /bin/bash
+```
 
 Ubuntu 20.04 with the following commands run:
 ```
