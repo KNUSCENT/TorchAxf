@@ -25,7 +25,7 @@ $ docker run -it --gpus all --name TorchAxf -w /home -dt ubuntu:20.04 /bin/bash
 $ docker exec -it TorchAxf /bin/bash
 ```
 
-Ubuntu 20.04 with the following pre-setup commands run:
+Ubuntu 20.04 pre-setup commands:
 ```
 $ apt-get update
 $ apt-get upgrade -y
