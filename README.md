@@ -1,5 +1,5 @@
 # TorchAxf
-We proposed "TorchAxf: Enabling Rapid Simulation of Approximate DNN Models using GPU-based Floating-Point Computing Framework" in MASCOTS 2023.
+We proposed "TorchAxf: Enabling Rapid Simulation of Approximate DNN Models using GPU-based Floating-Point Computing Framework" in MASCOTS 2023. (https://ieeexplore.ieee.org/abstract/document/10387653)
 ![image](https://github.com/rhkr9609/TorchAxf/assets/45326283/71269312-d161-4ce2-9dd1-0a397820142d)
 
 TorchAxf: a **floating-point** computing framework developed to accelerate the emulation of **approximate** Deep Neural Network (DNN) models, including Spiking Neural Networks (SNNs). Leveraging PyTorch and CUDA for GPU acceleration, TorchAxf provides a comprehensive environment for integrating various types of approximate adders and multipliers, **supporting both standard and custom floating-point formats.**
