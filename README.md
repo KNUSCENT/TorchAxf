@@ -20,7 +20,7 @@ Before configuring your environment, check if your GPU driver is the latest vers
 
 Docker image download and run
 ```
-$ docker pull utuntu:20.04
+$ docker pull ubuntu:20.04
 $ docker run -it --gpus all --name TorchAxf -w /home -dt ubuntu20.04 /bin/bash
 ```
 
