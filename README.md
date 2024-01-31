@@ -33,7 +33,7 @@ $ pip3 install pynvrtc tqdm cupy-cuda11x
 
 # Setup Framework
 ```
-$ git clone https://github.com/rhkr9609/TorchAxf.git
+$ git clone https://github.com/KNUSCENT/TorchAxf.git
 $ cd TorchAxf
 ```
 
