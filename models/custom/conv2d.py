@@ -41,38 +41,6 @@ class fn_A_Conv2d(torch.autograd.Function):
         else:
             return grad_input, grad_weight, None, None, None, None, None, None, None, None, None, None, None, None
 
-class CPU_fn_A_Conv2d(torch.autograd.Function):
-    # Note that both forward and backward are @staticmethods
-    @staticmethod
-    # bias is an optional argument
-    def forward(ctx, input, weight, kernel_size, stride, padding, groups, custom, bias=None):
-        ctx.save_for_backward(input, weight, bias)
-        ctx.padding = padding
-        ctx.stride = stride
-        ctx.groups = groups
-        return custom_functional.cpu_conv2d(input, weight, kernel_size, stride, groups, padding, custom)
-
-    # This function has only a single output, so it gets only one gradient
-    @staticmethod
-    def backward(ctx, grad_output):
-        input, weight, bias = ctx.saved_variables   
-        grad_input = grad_weight= grad_bias = None
-        padding = ctx.padding
-        stride = ctx.stride
-        groups = ctx.groups
-        if ctx.needs_input_grad[0]:
-            grad_input = torch.nn.grad.conv2d_input(input.shape, weight, grad_output, stride=stride, padding=padding, groups=groups)
-        if ctx.needs_input_grad[1]:
-            grad_weight = torch.nn.grad.conv2d_weight(input, weight.shape, grad_output, stride=stride, padding=padding, groups=groups)
-            
-        if bias is not None and ctx.needs_input_grad[2]:
-            grad_bias = grad_output.sum(0).squeeze(0)
-    
-        if bias is not None:
-            return grad_input, grad_weight, grad_bias
-        else:
-            return grad_input, grad_weight, None, None, None, None
-
 class A_Conv2d(_ConvNd):
     def __init__(
         self,
@@ -112,14 +80,6 @@ class A_Conv2d(_ConvNd):
         self.mm_out:Tensor
         # check parameter
         self.batch_size = None
-
-        # CPU conv2d
-        self.custom = load(
-            name='custom',
-            sources=['./models/custom/custom_convolution.cpp'],
-            extra_cflags=['-march=native -fopenmp -O3'],
-            extra_ldflags=['-lgomp'],
-            verbose=False
         )
 
         super(A_Conv2d, self).__init__(
@@ -165,7 +125,4 @@ class A_Conv2d(_ConvNd):
         return self.fn(input, self.weight, self.kernel_size, self.stride, self.padding, self.groups, self.custom)
 
     def forward(self, input: Tensor) -> Tensor:
-        if input.get_device() == 0:
-            return self.GPU_forward(input)
-        else:
-            return self.CPU_forward(input)
+        return self.GPU_forward(input)
