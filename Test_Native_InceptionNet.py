@@ -46,7 +46,7 @@ test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size, s
 model = inception.inception_v3(pretrained=True, device=device)
 model = model.to(device)
 
-loss = torch.nn.CrossEntropyLoss().to(device)
+loss_func = torch.nn.CrossEntropyLoss().to(device)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.0001)
 
 total = 0
@@ -69,7 +69,7 @@ for i, data in enumerate(train_loader, 0):
     inputs = inputs.to(device)
     labels = labels.to(device)
     output = model(inputs)
-    loss = loss(output, labels)
+    loss = loss_func(output, labels)
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
