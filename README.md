@@ -28,6 +28,7 @@ require package install in docker container
 ```
 $ apt-get update
 $ apt-get install wget vim git unzip -y
+$ pip3 install pynvrtc tqdm cupy-cuda11x
 ```
 
 # Setup Framework
