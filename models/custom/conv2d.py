@@ -80,7 +80,6 @@ class A_Conv2d(_ConvNd):
         self.mm_out:Tensor
         # check parameter
         self.batch_size = None
-        )
 
         super(A_Conv2d, self).__init__(
             in_channels, out_channels, kernel_size_, stride_, padding_, dilation_,
