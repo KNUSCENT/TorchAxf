@@ -5,7 +5,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0"
 import torch
 import torchvision.datasets as datasets
 import torchvision.transforms as T
-from models import custom_inception
+from models import custom_mobilenetv2
 import time
 
 # using FP32 format
@@ -43,7 +43,7 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size,
 test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=8, pin_memory=True)
 ###################################################################################################################################
 
-model = custom_inception.inception_v3(pretrained=True, device=device)
+model = custom_mobilenetv2.mobilenet_v2(pretrained=True, device=device)
 model = model.to(device)
 
 loss_func = torch.nn.CrossEntropyLoss().to(device)

@@ -7,15 +7,18 @@ from torch.nn.common_types import _size_2_t
 from typing import Union
 from . import custom_functional
 
+from torch.utils.cpp_extension import load
+
 class fn_A_Conv2d(torch.autograd.Function):
     # Note that both forward and backward are @staticmethods
     @staticmethod
     # bias is an optional argument
-    def forward(ctx, input, weight, stride, cuda_stride , padding, f, s, cuda_output, cuda_output_size, cuda_input_size, cuda_weight_size, output_size, bias=None):
+    def forward(ctx, input, weight, stride, cuda_stride, groups, cuda_groups , padding, f, s, cuda_output, cuda_output_size, cuda_input_size, cuda_weight_size, output_size, bias=None):
         ctx.save_for_backward(input, weight, bias)
         ctx.padding = padding
         ctx.stride = stride
-        return custom_functional.conv2d(input, weight, cuda_stride, padding, f, s, cuda_output, cuda_output_size, cuda_input_size, cuda_weight_size, output_size)
+        ctx.groups = groups
+        return custom_functional.conv2d(input, weight, cuda_stride, cuda_groups, padding, f, s, cuda_output, cuda_output_size, cuda_input_size, cuda_weight_size, output_size)
 
     # This function has only a single output, so it gets only one gradient
     @staticmethod
@@ -24,10 +27,11 @@ class fn_A_Conv2d(torch.autograd.Function):
         grad_input = grad_weight= grad_bias = None
         padding = ctx.padding
         stride = ctx.stride
+        groups = ctx.groups
         if ctx.needs_input_grad[0]:
-            grad_input = torch.nn.grad.conv2d_input(input.shape, weight, grad_output, stride=stride, padding=padding)
+            grad_input = torch.nn.grad.conv2d_input(input.shape, weight, grad_output, stride=stride, padding=padding, groups=groups)
         if ctx.needs_input_grad[1]:
-            grad_weight = torch.nn.grad.conv2d_weight(input, weight.shape, grad_output, stride=stride, padding=padding)
+            grad_weight = torch.nn.grad.conv2d_weight(input, weight.shape, grad_output, stride=stride, padding=padding, groups=groups)
             
         if bias is not None and ctx.needs_input_grad[2]:
             grad_bias = grad_output.sum(0).squeeze(0)
@@ -35,7 +39,7 @@ class fn_A_Conv2d(torch.autograd.Function):
         if bias is not None:
             return grad_input, grad_weight, grad_bias
         else:
-            return grad_input, grad_weight, None, None, None, None, None, None, None, None, None, None
+            return grad_input, grad_weight, None, None, None, None, None, None, None, None, None, None, None, None
 
 class A_Conv2d(_ConvNd):
     def __init__(
@@ -67,6 +71,7 @@ class A_Conv2d(_ConvNd):
         self.cuda_input_size:Tensor
         self.cuda_weight_size:Tensor
         self.cuda_stride:Tensor
+        self.cuda_groups:Tensor
         self.output_size = []
         self.n_f = None
         self.out_h = None
@@ -101,6 +106,7 @@ class A_Conv2d(_ConvNd):
             output_size = [n, n_f, out_h, out_w]
             self.output_size = output_size
             self.cuda_stride = torch.tensor(self.stride[0]).int().cuda()
+            self.cuda_groups = torch.tensor(self.groups).int().cuda()
             self.output = torch.zeros(n, n_f, out_h, out_w).cuda()
             self.cuda_output_size = torch.tensor(output_size).int().cuda()
             self.cuda_input_size = torch.tensor(input_size).int().cuda()
@@ -110,7 +116,12 @@ class A_Conv2d(_ConvNd):
             self.output_size = [n, self.n_f, self.out_h, self.out_w]
             self.output.resize_(n, self.n_f, self.out_h, self.out_w)
             
-        return self.fn(input, self.weight, self.stride, self.cuda_stride , self.padding, self.f, self.s, self.output, self.cuda_output_size, self.cuda_input_size, self.cuda_weight_size, self.output_size)
+        return self.fn(input, self.weight, self.stride, self.cuda_stride, self.groups, self.cuda_groups , self.padding, self.f, self.s, self.output, self.cuda_output_size, self.cuda_input_size, self.cuda_weight_size, self.output_size)
+
+    def CPU_forward(self, input: Tensor) -> Tensor:
+        if self.fn == None:
+            self.fn = CPU_fn_A_Conv2d.apply
+        return self.fn(input, self.weight, self.kernel_size, self.stride, self.padding, self.groups, self.custom)
 
     def forward(self, input: Tensor) -> Tensor:
-            return self.GPU_forward(input)
+        return self.GPU_forward(input)
