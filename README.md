@@ -56,7 +56,7 @@ python3 Test_Approximaet_[model name].py // approximate FP model
 python3 Test_Native_[model name].py // original model
 ```
 
-yon can change FP format, approximate adder and multiplier in /models/custom/custom_HW.cu and /models/custom/custom_conv2d.cu files
+You can modify the floating-point (FP) formats, as well as the approximate adder and multiplier, in the '/models/custom/custom_HW.cu' and '/models/custom/custom_conv2d.cu'
 
 <!--
 Ubuntu 20.04 pre-setup commands:
