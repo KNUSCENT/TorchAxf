@@ -48,8 +48,13 @@ rm gkw08ecs797j2et1ksmbg1w5t3idf5r5.zip
 cd ..
 ```
 
-# Run guideline
+# Run Guideline
 
+run command
+```
+python3 Test_Approximaet_[model name].py // approximate FP model
+python3 Test_Native_[model name].py // original model
+```
 
 <!--
 Ubuntu 20.04 pre-setup commands:
