@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 from collections import namedtuple
 from cupy.cuda import function
-from pynvrtc.compiler import Program
+from .compiler import Program
 
 def make_cuda_function():
     kernel = ""
